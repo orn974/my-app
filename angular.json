@@ -75,6 +75,9 @@
               "browserTarget": "my-app:build:development"
             }
           },
+          "options": {
+            "port": 4201
+          },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
@@ -103,5 +106,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "23765d23-5d85-400f-b36e-71964443c5b9"
   }
 }
