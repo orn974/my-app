@@ -11,4 +11,8 @@ export class GetRest {
   public getReqest() {
     return this.httpClient.get("http://localhost:8081/getOne/5")
   }
+  public getAllReqest(){
+    return this.httpClient.get("http://localhost:8081/products")
+  }
+
 }

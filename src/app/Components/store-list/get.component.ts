@@ -1,6 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {GetRest} from "../get-from-rest/get-rest";
-import {data} from "autoprefixer";
+import {Product} from "../Models/product";
 
 
 @Component({
@@ -9,12 +9,19 @@ import {data} from "autoprefixer";
   })
 
 export class GetComponent implements OnInit{
-  objetNumber: any;
+  productNumber: Product;
+  allObjects: Product[];
 constructor(private getRest:GetRest) {
 }
 ngOnInit(): void {
-  this.getRest.getReqest().subscribe((data: any) => {console.log(data);
-  this.objetNumber = data;
+  //@ts-ignore
+  this.getRest.getReqest().subscribe((data: Product) => {
+    console.log(data);
+    this.productNumber = data;
+  })
+  //@ts-ignore
+  this.getRest.getAllReqest().subscribe((data: Product[]) => {
+    this.allObjects = data;
   })
 }
 }
