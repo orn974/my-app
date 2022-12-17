@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import {GetComponent} from "./Components/store-list/get.component";
 import {HttpClientModule} from "@angular/common/http";
 import {AlertModule} from "ngx-bootstrap/alert";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -19,7 +20,8 @@ import {AlertModule} from "ngx-bootstrap/alert";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

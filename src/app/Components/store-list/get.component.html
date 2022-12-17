@@ -6,21 +6,33 @@
     <title>Hi</title>
 n</head>
 <body>
-123-456
-<br>
-{{productNumber | json}}
-<br>
-storeId = {{productNumber.storeId}}
-<br>
-name = {{productNumber.productName}}
-<br>
-cost = {{productNumber.cost}}
-<br>
-data = {{productNumber.productDate}}
+<!--123-456-->
+<!--<br>-->
+<!--{{productNumber | json}}-->
+
+<!--name = {{productNumber.productName}}-->
+<!--<br>-->
+<!--cost = {{productNumber.cost}}-->
+<!--<br>-->
+<!--data = {{productNumber.productDate}}-->
 
 
 <br>
 
+<div class="container">
+<form [formGroup]="formAdd" (ngSubmit)="submitForm()">
+  <div class="form-group input-group-lg">
+    <input id = "productName" class="form-control" placeholder="ProductName" formComtrolName = "productName">
+    <input class="form-control" placeholder="Cost" formComtrolName = "cost">
+    <input type="date" class="form-control" placeholder="ProductDate" formComtrolName = "productDate">
+  </div>
+  <div class="form-gtoup">
+    <button class="btn btn-danger btn-block btn-lg" type="submit">
+      Create
+    </button>
+  </div>
+</form>
+</div>
 
 <table class="table">
   <thead>
