@@ -22,11 +22,11 @@ n</head>
 <div class="container">
 <form [formGroup]="formAdd" (ngSubmit)="submitForm()">
   <div class="form-group input-group-lg">
-    <input id = "productName" class="form-control" placeholder="ProductName" formComtrolName = "productName">
-    <input class="form-control" placeholder="Cost" formComtrolName = "cost">
-    <input type="date" class="form-control" placeholder="ProductDate" formComtrolName = "productDate">
+    <input id = "productName" class="form-control" placeholder="ProductName" formControlName = "productName">
+    <input class="form-control" placeholder="Cost" formControlName = "cost">
+    <input type="date" class="form-control" placeholder="ProductDate" formControlName = "productDate">
   </div>
-  <div class="form-gtoup">
+  <div class="form-group">
     <button class="btn btn-danger btn-block btn-lg" type="submit">
       Create
     </button>

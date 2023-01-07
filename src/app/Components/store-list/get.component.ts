@@ -1,7 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {GetRest} from "../get-from-rest/get-rest";
 import {Product} from "../Models/product";
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, FormControl} from "@angular/forms";
 
 
 @Component({
@@ -42,6 +42,7 @@ export class GetComponent implements OnInit {
     formData.append('productName', this.formAdd.get('productName'))
     formData.append('cost', this.formAdd.get('cost'))
     formData.append('productDate', this.formAdd.get('productDate'))
+    console.log(JSON.stringify(formData))
     this.getRest.postComponent(formData).subscribe({
       next:(response) => console.log(response),
       error:(error) => console.log(error),
