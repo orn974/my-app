@@ -1,7 +1,9 @@
 import {Component, OnInit} from "@angular/core";
 import {GetRest} from "../get-from-rest/get-rest";
 import {Product} from "../Models/product";
-import {FormBuilder, FormGroup, FormControl} from "@angular/forms";
+import {FormAdd} from "../Models/formAdd";
+import {FormBuilder} from "@angular/forms";
+
 
 
 @Component({
@@ -10,18 +12,14 @@ import {FormBuilder, FormGroup, FormControl} from "@angular/forms";
 })
 
 export class GetComponent implements OnInit {
-  productNumber: Product;
-  allObjects: Product[];
+  productNumber: any;
+  allObjects: any;
 
-  //formAdd: FormGroup;
   constructor(public fb: FormBuilder, private getRest: GetRest) {
 
   }
-  formAdd = this.fb.group({
-    productName:[''],
-    cost:[''],
-    productDate:['']
-  });
+
+  //@ts-ignore
 
   ngOnInit(): void {
     //@ts-ignore
@@ -35,17 +33,28 @@ export class GetComponent implements OnInit {
     })
   }
 
-
+  productAdd : any;
+  formAdd=this.fb.group({
+    storeId:"",
+    productName:"",
+    cost: 0,
+    productDate: 0
+  });
   submitForm (){
-    console.log("submitForm runned: " + JSON.stringify(this.formAdd.value) + this.formAdd);
-    var formData: any = new FormData();
-    formData.append('productName', this.formAdd.get('productName'))
-    formData.append('cost', this.formAdd.get('cost'))
-    formData.append('productDate', this.formAdd.get('productDate'))
-    console.log(JSON.stringify(formData))
-    this.getRest.postComponent(formData).subscribe({
+    console.log("submitForm runned: " + JSON.stringify(this.formAdd.value));
+    // var formData: any = new FormData();
+    //formData.append('product', JSON.stringify(this.formAdd.ts.value))
+    //formData.append('product', JSON.stringify(this.formAdd.ts.get('product')))
+    // formData.append('productName', this.formAdd.ts.get('productName'))
+    // formData.append('cost', this.formAdd.ts.get('cost'))
+    // formData.append('productDate', this.formAdd.ts.get('productDate'))
+
+    this.productAdd = this.formAdd.value
+    console.log("formData = " + JSON.stringify(this.productAdd) + this.productAdd)
+    this.getRest.postComponent(this.productAdd).subscribe({
       next:(response) => console.log(response),
       error:(error) => console.log(error),
     });
   }
+
 }

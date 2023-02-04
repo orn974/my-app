@@ -16,16 +16,16 @@ n</head>
 <!--<br>-->
 <!--data = {{productNumber.productDate}}-->
 
-
 <br>
 
 <div class="container">
 <form [formGroup]="formAdd" (ngSubmit)="submitForm()">
   <div class="form-group input-group-lg">
+
     <input id = "productName" class="form-control" placeholder="ProductName" formControlName = "productName">
     <input class="form-control" placeholder="Cost" formControlName = "cost">
     <input type="date" class="form-control" placeholder="ProductDate" formControlName = "productDate">
-  </div>
+  </div>n
   <div class="form-group">
     <button class="btn btn-danger btn-block btn-lg" type="submit">
       Create
@@ -33,6 +33,7 @@ n</head>
   </div>
 </form>
 </div>
+
 
 <table class="table">
   <thead>
@@ -48,6 +49,10 @@ n</head>
     <td>{{product.productName}}</td>
     <td>{{product.cost}}</td>
     <td>{{product.productDate}}</td>
+    <td>
+      <button type="button" onclick="location.href='/put-product'" class="btn btn-sm" style="background: lawngreen">Edit</button>
+      <button type="button" onclick="location.href='/del-product'" class="btn btn-sm" style="background: red">Delete</button>
+    </td>
   </tr>
   </tbody>
 </table>

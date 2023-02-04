@@ -7,6 +7,7 @@ import {GetComponent} from "./Components/store-list/get.component";
 import {HttpClientModule} from "@angular/common/http";
 import {AlertModule} from "ngx-bootstrap/alert";
 import {ReactiveFormsModule} from "@angular/forms";
+import {PutComponent} from "./Components/put/put-component";
 
 
 
@@ -14,7 +15,8 @@ import {ReactiveFormsModule} from "@angular/forms";
 @NgModule({
   declarations: [
     AppComponent,
-    GetComponent
+    GetComponent,
+    PutComponent
   ],
   imports: [
     BrowserModule,
