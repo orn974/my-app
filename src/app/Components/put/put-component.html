@@ -8,6 +8,7 @@
 <div class="container">
   <form [formGroup]="formPut" (ngSubmit)="submitFormPut()">
     <div class="form-group input-group-lg">
+    MyId = {{storeId}}
       <input id = "productName" class="form-control" placeholder="ProductName" formControlName = "productName">
       <input class="form-control" placeholder="Cost" formControlName = "cost">
       <input type="date" class="form-control" placeholder="ProductDate" formControlName = "productDate">

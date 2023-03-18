@@ -42,12 +42,6 @@ export class GetComponent implements OnInit {
   });
   submitForm (){
     console.log("submitForm runned: " + JSON.stringify(this.formAdd.value));
-    // var formData: any = new FormData();
-    //formData.append('product', JSON.stringify(this.formAdd.ts.value))
-    //formData.append('product', JSON.stringify(this.formAdd.ts.get('product')))
-    // formData.append('productName', this.formAdd.ts.get('productName'))
-    // formData.append('cost', this.formAdd.ts.get('cost'))
-    // formData.append('productDate', this.formAdd.ts.get('productDate'))
 
     this.productAdd = this.formAdd.value
     console.log("formData = " + JSON.stringify(this.productAdd) + this.productAdd)

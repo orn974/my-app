@@ -4,8 +4,9 @@ import {GetComponent} from "./Components/store-list/get.component";
 import {PutComponent} from "./Components/put/put-component";
 
 const routes: Routes = [
+
   {path: '', component: GetComponent},
-  {path: 'put-product', component: PutComponent}
+  {path: 'put-product/:storeId', component: PutComponent}
 
 ];
 

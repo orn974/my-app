@@ -50,8 +50,8 @@ n</head>
     <td>{{product.cost}}</td>
     <td>{{product.productDate}}</td>
     <td>
-      <button type="button" onclick="location.href='/put-product'" class="btn btn-sm" style="background: lawngreen">Edit</button>
-      <button type="button" onclick="location.href='/del-product'" class="btn btn-sm" style="background: red">Delete</button>
+      <button type="button" [routerLink] = "['/put-product/', product.storeId ]" class="btn btn-sm" style="background: lawngreen">Edit</button>
+      <button type="button" onclick="location.href ='/del-product'" class="btn btn-sm" style="background: red">Delete</button>
     </td>
   </tr>
   </tbody>
